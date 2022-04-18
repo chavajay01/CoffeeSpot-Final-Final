@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.hero{
+    height: 100vh;
+    width: 100%;
+    background-image: url(/static/imagenes/CAFE.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.logo{
+    color: rgb(0, 0, 0);
+    font-size: 60px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    padding-top: 0%;
+  
+}
+
+.services{
+    background: rgba(0, 0, 0, 0);
+    width: 100%;
+    padding: 100px 0px;
+}
+
+.title h2{
+    color: white;
+    font-size: 75px;
+    width: 1130px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.box{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    min-height: 700px;
+}
+
+.card{
+    height: 450px;
+    width: 335px;
+    padding: 20px 35px;
+    background: #ffffff9c;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+h4{
+    color: black;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.pra p{
+    color: #fcfcfc;
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 25px;
+}
+
+.card .button{ 
+    background-color: bisque;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 9px 22px;
+    border-radius: 30px;
+    transition: .4s;
+}
+
+.card .button:hover{
+    background-color: transparent;
+    border: 2px solid bisque;
+    cursor: pointer;
+}

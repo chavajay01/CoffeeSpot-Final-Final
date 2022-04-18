@@ -87,5 +87,24 @@ def Postres():
 def promociones():
     return render_template("Pagina/Promociones.html")
 
+@auth.route("/Finanzas")
+def finanzas():
+    return render_template("Finanzas/Finanzas.html")
+
+@auth.route("/detailCreate")
+def finanzas1():
+    return render_template("Finanzas/detailCreate.html")
+
+@auth.route("/detailHome")
+def finanzas2():
+    return render_template("Finanzas/detailHome.html")
+
+@auth.route("/orderCreate")
+def finanzas3():
+    return render_template("Finanzas/orderCreate.html")
+
+@auth.route("/orderHome")
+def finanzas4():
+    return render_template("Finanzas/orderHome.html")
 
 
