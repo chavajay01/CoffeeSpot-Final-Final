@@ -6,30 +6,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/style/style.css">
+    <link rel="stylesheet" href="/static/style/styleL.css">
     <title>LogIn_Inventario</title>
 </head><script src="https://kit.fontawesome.com/42a3b7e233.js" crossorigin="anonymous"></script>
 
-<body>
-    <div>
-        <form class="formulario">
-
+{% block body %}
+<body> <div>
+            <div class="contenedor">
             <h1>Iniciar Sesion</h1>
             <p>Ingresar usuario y contraseña para poder acceder a la administración de Coffee Spot:
-            <div class="contenedor">
-
             <form action="{{ url_for('auth.login') }}" method="post">
                 {{ form.hidden_tag() }}
                 {{ form.username.label }}
                 {{ form.username }}
+                <br>
+                <br>
                 {{ form.password.label }}
                 {{ form.password }}
+                <br>
+                <br>
                 {{ form.submit }}
 
+            </form>
             </div>
-        </form>
-        <a href="{{ url_for('auth.register') }}" class="boton">Ir a la pagina web</a>
-    </div>
+        <br>
+        <a href="{{ url_for('auth.register') }}" class="boton">Ir a la pagina web</a> </div>
+      
 
     <style>
         body{
@@ -41,6 +43,7 @@
     </style> 
 
 </body>
+{% endblock %}
  
 
 {% endblock %}

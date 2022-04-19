@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from routes.auth import auth
 from routes.recursos import Recursos
+from routes.todolist import todolist
 from routes.inventario import Inventario
 from routes.ventas import Ventas
 from flask_bcrypt import Bcrypt
@@ -22,6 +23,6 @@ app.register_blueprint(auth)
 app.register_blueprint(Recursos)
 app.register_blueprint(Inventario)
 app.register_blueprint(Ventas)
-
+app.register_blueprint(todolist)
 
 

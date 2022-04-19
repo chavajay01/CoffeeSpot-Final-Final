@@ -19,6 +19,22 @@ class recursosCreateForm(FlaskForm):
         ],
         render_kw={"placeholder": "password"},
     )
+    
+    status = StringField(
+        validators=[
+            InputRequired(),
+            Length(min=4, max=20),
+        ],
+        render_kw={"placeholder": "status"},
+    )
+    
+    rank = StringField(
+        validators=[
+            InputRequired(),
+            Length(min=4, max=20),
+        ],
+        render_kw={"placeholder": "rank"},
+    )
 
     
 

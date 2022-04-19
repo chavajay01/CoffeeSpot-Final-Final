@@ -20,8 +20,10 @@ def create():
     if form.validate_on_submit():
         username = form.username.data
         password = form.password.data
+        status = form.status.data
+        rank = form.rank.data
         hashed_password = bcrypt.generate_password_hash(password)
-        newRecursos = User(username, hashed_password)
+        newRecursos = User(username, hashed_password, status, rank)
         db.session.add(newRecursos)
         db.session.commit()
         return redirect(url_for("Recursos.home"))
@@ -41,9 +43,13 @@ def update(RecursosId):
     if form.validate_on_submit():
         username = form.username.data
         password = form.password.data
+        status = form.status.data
+        rank = form.rank.data
         hashed_password = bcrypt.generate_password_hash(password)
         currentRecursos.username = username
         currentRecursos.password = hashed_password
+        currentRecursos.status = status
+        currentRecursos.rank = rank
         db.session.add(currentRecursos)
         db.session.commit()
         return redirect(url_for("Recursos.recursos"))
