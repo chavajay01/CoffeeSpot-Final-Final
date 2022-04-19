@@ -1,0 +1,59 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style/style11.css">
+    <title>Inventario Create</title>
+  </head><script src="https://kit.fontawesome.com/42a3b7e233.js" crossorigin="anonymous"></script>
+  
+  <style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #31260e;
+      color: white;
+    }
+  </style>
+  
+  
+  <br>
+  <a href="{{ url_for('Ventas.create') }}">Hacer una venta</a>
+  <br>
+  <table id="customers">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Code</th>
+            <th>Fecha</th>
+            <th>price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in vent %}
+        <tr>
+            <td>{{ item.producto }}</td>
+            <td>{{ item.code }}</td>
+            <td>{{ item.Fecha }}</td>
+            <td>{{ item.price }}</td>
+            <td><a href="{{ url_for('Ventas.delete', VentasId=item.id) }}">Delete</a></td>
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+  </table>

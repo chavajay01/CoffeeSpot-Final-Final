@@ -3,8 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from routes.auth import auth
 from routes.recursos import Recursos
 from routes.inventario import Inventario
-from routes.orders import orders
-from routes.orderdetails import orderDetails
+from routes.Ventas import Ventas
 from flask_bcrypt import Bcrypt
 from flask_migrate import Migrate
 from utils.loginManagerService import login_manager
@@ -22,6 +21,6 @@ Migrate(app, db)
 app.register_blueprint(auth)
 app.register_blueprint(Recursos)
 app.register_blueprint(Inventario)
-app.register_blueprint(orders)
-app.register_blueprint(orderDetails)
+app.register_blueprint(Ventas)
+
 
