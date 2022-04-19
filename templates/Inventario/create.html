@@ -3,14 +3,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style/style11.css">
+    <link rel="stylesheet" href="/static/style/style2.css">
     <title>Inventario Create</title>
 </head><script src="https://kit.fontawesome.com/42a3b7e233.js" crossorigin="anonymous"></script>
 
-<h1>task create</h1>
+<h1>Inventario</h1>
 <br>
 
 
-<p>task create</p>
+<p>Agregar al inventario</p>
 <br>
 <form action="{{ url_for('Inventario.create') }}" method="post">
     {{ form.hidden_tag() }}
@@ -26,3 +27,12 @@
     {{ form.stock }}
     {{ form.submit }}
 </form>
+
+<style>
+    section{
+        background-image: url('static/imagenes/coffeespot.jpg');
+        background-size: cover;
+        background-position: center center;
+        height: calc(100vh - 50px);
+    }    
+</style>

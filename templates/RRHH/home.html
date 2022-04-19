@@ -3,14 +3,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style/style10.css">
+    <link rel="stylesheet" href="/static/style/style12.css">
     <title>Recursos Humanos</title>
 </head><script src="https://kit.fontawesome.com/42a3b7e233.js" crossorigin="anonymous"></script>
 
-<body>
 
-     <h1>
-         <a href="{{ url_for('Recursos.create') }}">create</a>
-         <br>
-         <a href="{{ url_for('Recursos.recursos') }}">update</a>
-    <h1>
-<body>
+
+<div class="hero">
+    <div class="services">
+        <h2 class="logo"> Bienvenido a recursos humanos</h2>
+
+        <body>
+
+            <h1>
+                <br>
+                <br>
+                <br>
+                <a href="{{ url_for('Recursos.create') }}" class="btn btn-primary"> Crear usuario</a>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="{{ url_for('Recursos.recursos') }}" class="btn btn-second"> Administrar usuarios</a>
+            <h1>
+        <body>
+    </div>
+</div>        

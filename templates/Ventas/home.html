@@ -3,14 +3,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style/style10.css">
+    <link rel="stylesheet" href="/static/style/style12.css">
     <title>Ventas</title>
 </head><script src="https://kit.fontawesome.com/42a3b7e233.js" crossorigin="anonymous"></script>
 
-<body>
+<div class="hero">
+    <div class="services">
+        <h2 class="logo"> Bienvenido a ventas</h2>
 
-     <h1>
-         <a href="{{ url_for('Ventas.create') }}">create</a>
-         <br>
-         <a href="{{ url_for('Ventas.ventas') }}">update</a>
-    <h1>
-<body>
+        <body>
+
+            <h1>
+                <br>
+                <br>
+                <br>
+                <a href="{{ url_for('Ventas.create') }}" class="btn btn-primary"> Crear venta</a>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="{{ url_for('Ventas.ventas') }}" class="btn btn-second"> Administrar ventas</a>
+            <h1>
+        <body>
+    </div>
+</div>  

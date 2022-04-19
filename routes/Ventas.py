@@ -61,8 +61,17 @@ def delete(ventasId):
 
 @Ventas.route("/VT", methods=["GET", "POST"])
 def VT():
+    form = ventasUpdateForm()
     vent = ventitas.query.all()
-    return render_template("Finanzas/ventastotales.html", vent=vent)
+    description = form.description.data
+    price = form.price.data
+    cantidad = form.cantidad.data
+    total = 0
+    for n in vent:
+        if n.price == "Latte":
+            total += 3*3
+    return render_template("Finanzas/ventastotales.html", vent=vent,total=total)
+
 
 @Ventas.route("/Finanzas")
 def finanzas():
