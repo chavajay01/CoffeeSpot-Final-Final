@@ -1,9 +1,11 @@
+
+
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
+from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import InputRequired, Length
 
 
-class ventasCreateForm(FlaskForm):
+class ventasUpdateForm(FlaskForm):
     productId = StringField(
         validators=[
             InputRequired(),

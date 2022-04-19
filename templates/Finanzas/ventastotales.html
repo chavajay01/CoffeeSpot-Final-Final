@@ -33,7 +33,7 @@
   
   
   <br>
-  <a href="{{ url_for('Ventas.create') }}">create an order</a>
+
   <br>
   <table id="customers">
     <thead>
@@ -51,8 +51,6 @@
             <td>{{ item.description }}</td>
             <td>{{ item.price }}</td>
             <td>{{ item.cantidad }}</td>
-            <td><a href="{{ url_for('Ventas.update', ventasId=item.id) }}">Update</a></td>
-            <td><a href="{{ url_for('Ventas.delete', ventasId=item.id) }}">Delete</a></td>
             
         </tr>
         {% endfor %}

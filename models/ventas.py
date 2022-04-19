@@ -1,18 +1,18 @@
 from utils.db import db
 
 
-class Ventas(db.Model):
+class ventitas(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    producto = db.Column(db.Integer, nullable=False)
-    code = db.Column(db.String(200), nullable=False)
-    Fecha = db.Column(db.String(15), nullable=False)
+    productId = db.Column(db.Integer, nullable=False)
+    description = db.Column(db.String(15), nullable=False)
     price = db.Column(db.Integer, nullable=False)
+    cantidad = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, producto, code, Fecha, price) -> None:
-        self.producto = producto
-        self.code = code
-        self.Fecha = Fecha
+    def __init__(self, productId, description, price, cantidad) -> None:
+        self.productId = productId
+        self.description = description
         self.price = price
+        self.cantidad = cantidad
 
     def __repr__(self) -> str:
-        return f"Inventario({self.id}, {self.producto}, '{self.Fecha}', '{self.code}', '{self.price}')"
+        return f"Ventas({self.id}, {self.productId}, '{self.description}', '{self.price}','{self.cantidad}')"

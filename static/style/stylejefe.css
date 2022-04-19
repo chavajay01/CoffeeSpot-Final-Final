@@ -111,8 +111,8 @@ h1{
 
 
 .ContainerButton{
-    align-content: center;
-    justify-content: center;
+    align-content: left;
+    justify-content: left;
     margin-top: 200px;
     margin-left: 375px;   
 }
@@ -130,7 +130,7 @@ h1{
 }
 
 .btn:hover{
-    background-position: right;
+    background-position: center;
 }
 
 
@@ -139,4 +139,10 @@ h1{
 }
 .btn-second{
     background-image: linear-gradient(110deg, #1c62e4 60%, #2c4083 60% );
+}
+.btn-third{
+    background-image: linear-gradient(110deg, #e4d71cbb 60%, #fff126bb 60% );
+}
+.btn-fourth{
+    background-image: linear-gradient(110deg, #e41cb9bb 60%, #ff53dabb 60% );
 }

@@ -3,16 +3,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style/style11.css">
-    <title>Ventas Create</title>
+    <title>Inventario Create</title>
 </head><script src="https://kit.fontawesome.com/42a3b7e233.js" crossorigin="anonymous"></script>
 
-<h1>Nueva venta</h1>
+
+<h1>task create</h1>
 <br>
 
 
-<p>Crear una venta</p>
+<p>task create</p>
 <br>
-<form action="{{ url_for('Ventas.create') }}" method="post">
+<form action="{{ url_for('Ventas.update', ventasId = ventasId.id) }}" method="post">
     {{ form.hidden_tag() }}
     {{ form.productId.label }}
     {{ form.productId }}

@@ -87,8 +87,7 @@ def Postres():
 def promociones():
     return render_template("Pagina/Promociones.html")
 
-@auth.route("/Finanzas")
-def finanzas():
-    return render_template("Finanzas/Finanzas.html")
+
+
 
 
