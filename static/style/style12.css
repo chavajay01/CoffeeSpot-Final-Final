@@ -83,3 +83,8 @@ h4{
     border: 2px solid bisque;
     cursor: pointer;
 }
+
+.btn-fifth{
+    background-image: linear-gradient(110deg, #ffffffbb 60%, #bebebebb 60% );
+    color: black
+}

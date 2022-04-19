@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for
 from forms.ventasCreateForms import ventasCreateForm
 from forms.ventasUpdateForms import ventasUpdateForm
+from flask_login import login_user, login_required, logout_user, current_user
 from models.ventas import ventitas
 from utils.db import db
 
@@ -9,11 +10,13 @@ Ventas = Blueprint("Ventas", __name__, url_prefix="/Ventas")
 
 
 @Ventas.route("/")
+@login_required
 def home():
     return render_template("Ventas/home.html")
     
     
 @Ventas.route("/create", methods=["GET", "POST"])
+@login_required
 def create():
     form = ventasCreateForm()
     if form.validate_on_submit():
@@ -29,11 +32,13 @@ def create():
 
 
 @Ventas.route("/ventas", methods=["GET", "POST"])
+@login_required
 def ventas():
     vent = ventitas.query.all()
     return render_template("Ventas/ventas.html", vent=vent)
 
 @Ventas.route("/update/<int:ventasId>", methods=["GET", "POST"])
+@login_required
 def update(ventasId):
     currentVentas = ventitas.query.filter_by(id=ventasId).first()
     form = ventasUpdateForm()
@@ -53,6 +58,7 @@ def update(ventasId):
 
 
 @Ventas.route("/delete/<int:ventasId>")
+@login_required
 def delete(ventasId):
     currentVentas = ventitas.query.filter_by(id=ventasId).first()
     db.session.delete(currentVentas)
@@ -60,19 +66,13 @@ def delete(ventasId):
     return redirect(url_for("Ventas.ventas"))
 
 @Ventas.route("/VT", methods=["GET", "POST"])
+@login_required
 def VT():
-    form = ventasUpdateForm()
     vent = ventitas.query.all()
-    description = form.description.data
-    price = form.price.data
-    cantidad = form.cantidad.data
-    total = 0
-    for n in vent:
-        if n.price == "Latte":
-            total += 3*3
-    return render_template("Finanzas/ventastotales.html", vent=vent,total=total)
+    return render_template("Finanzas/ventastotales.html", vent=vent)
 
 
 @Ventas.route("/Finanzas")
+@login_required
 def finanzas():
     return render_template("Finanzas/Finanzas.html")

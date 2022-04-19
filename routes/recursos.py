@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for
 from forms.recursosCreateForms import recursosCreateForm
 from forms.recursosUpdateForms import recursosUpdateForm
+from flask_login import login_user, login_required, logout_user, current_user
 from utils.bcryptService import bcrypt
 from models.user import User
 from utils.db import db
@@ -10,11 +11,13 @@ Recursos = Blueprint("Recursos", __name__, url_prefix="/Recursos")
 
 
 @Recursos.route("/")
+@login_required
 def home():
     return render_template("RRHH/home.html")
 
 
 @Recursos.route("/create", methods=["GET", "POST"])
+@login_required
 def create():
     form = recursosCreateForm()
     if form.validate_on_submit():
@@ -31,12 +34,14 @@ def create():
 
 
 @Recursos.route("/recursos", methods=["GET", "POST"])
+@login_required
 def recursos():
     recursos = User.query.all()
     return render_template("RRHH/recursos.html", recursos=recursos)
 
 
 @Recursos.route("/update/<int:RecursosId>", methods=["GET", "POST"])
+@login_required
 def update(RecursosId):
     currentRecursos = User.query.filter_by(id=RecursosId).first()
     form = recursosUpdateForm()
@@ -57,6 +62,7 @@ def update(RecursosId):
 
 
 @Recursos.route("/delete/<int:RecursosId>")
+@login_required
 def delete(RecursosId):
     currentRecursos = User.query.filter_by(id=RecursosId).first()
     db.session.delete(currentRecursos)

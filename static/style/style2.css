@@ -132,3 +132,6 @@ pre{
     line-height: 3rem;
 }
 
+.btn-fifth{
+    background-image: linear-gradient(110deg, #ffffffbb 60%, #bebebebb 60% );
+}

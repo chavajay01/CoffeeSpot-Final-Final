@@ -42,7 +42,6 @@
             <th>Description</th>
             <th>price</th>
             <th>cantidad</th>
-            <a>${{total}}</a>
         </tr>
     </thead>
     <tbody>
@@ -57,3 +56,4 @@
         {% endfor %}
     </tbody>
   </table>
+  <a href="{{ url_for('Ventas.finanzas') }}" class="btn-fifth">Volver a finanzas</a>

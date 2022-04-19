@@ -5,7 +5,7 @@ class ventitas(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     productId = db.Column(db.Integer, nullable=False)
     description = db.Column(db.String(15), nullable=False)
-    price = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Float, nullable=False)
     cantidad = db.Column(db.Integer, nullable=False)
 
     def __init__(self, productId, description, price, cantidad) -> None:

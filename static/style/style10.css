@@ -45,3 +45,8 @@ h1{
 .btn-second{
     background-image: linear-gradient(110deg, #1c62e4 60%, #2c4083 60% );
 }
+
+.btn-fifth{
+    background-image: linear-gradient(110deg, #ffffffbb 60%, #bebebebb 60% );
+    color: black
+}

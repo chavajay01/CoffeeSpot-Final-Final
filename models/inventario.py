@@ -6,7 +6,7 @@ class Inventarios(db.Model):
     productId = db.Column(db.Integer, nullable=False)
     code = db.Column(db.String(200), nullable=False)
     description = db.Column(db.String(15), nullable=False)
-    price = db.Column(db.Integer, nullable=False)
+    price = db.Column(db.Float, nullable=False)
     stock = db.Column(db.Integer, nullable=False)
 
     def __init__(self, productId, code, description, price, stock) -> None:

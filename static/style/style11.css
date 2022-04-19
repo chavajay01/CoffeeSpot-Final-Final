@@ -7,3 +7,8 @@
 h1{
     margin-top: 22px;
 }
+
+.btn-fifth{
+    background-image: linear-gradient(110deg, #ffffffbb 60%, #bebebebb 60% );
+    color: black
+}

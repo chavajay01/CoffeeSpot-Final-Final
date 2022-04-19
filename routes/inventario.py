@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for
 from forms.inventarioCreateForms import inventarioCreateForm
+from flask_login import login_user, login_required, logout_user, current_user
 from forms.inventarioUpdateForms import inventarioUpdateForm
 from models.inventario import Inventarios
 from utils.db import db
@@ -9,11 +10,13 @@ Inventario = Blueprint("Inventario", __name__, url_prefix="/Inventario")
 
 
 @Inventario.route("/")
+@login_required
 def home():
     return render_template("Inventario/home.html")
     
     
 @Inventario.route("/create", methods=["GET", "POST"])
+@login_required
 def create():
     form = inventarioCreateForm()
     if form.validate_on_submit():
@@ -30,11 +33,13 @@ def create():
 
 
 @Inventario.route("/inventario", methods=["GET", "POST"])
+@login_required
 def inventario():
     invent = Inventarios.query.all()
     return render_template("Inventario/inventario.html", invent=invent)
 
 @Inventario.route("/update/<int:inventarioId>", methods=["GET", "POST"])
+@login_required
 def update(inventarioId):
     currentInventario = Inventarios.query.filter_by(id=inventarioId).first()
     form = inventarioUpdateForm()
@@ -56,6 +61,7 @@ def update(inventarioId):
 
 
 @Inventario.route("/delete/<int:inventarioId>")
+@login_required
 def delete(inventarioId):
     currentInventario = Inventarios.query.filter_by(id=inventarioId).first()
     db.session.delete(currentInventario)
